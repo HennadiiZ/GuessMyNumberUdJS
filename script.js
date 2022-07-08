@@ -23,7 +23,12 @@ btnCheck.addEventListener('click', () =>{
 });
 
 btnAgain.addEventListener('click', () =>{
-
+    labelScore.innerHTML = 20;
+    highScore.innerHTML = 0;
+    decreaseNumber = 20;
+    random = Math.trunc(Math.random(2) * 20) + 1;
+    message.textContent = 'Start guessing...';
+    document.body.style.backgroundColor = '#222';
 });
 
 function checkNumber(number) {
@@ -39,7 +44,7 @@ function checkNumber(number) {
         qustionMarkBlock.textContent = random;
         message.textContent = '🎉 congratulations!';
         document.body.style.backgroundColor = '#60b347';
-        highScore.innerHTML = scoreDecr(labelScore);
+        highScore.innerHTML = decreaseNumber;
     }
 };
 
