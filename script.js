@@ -11,6 +11,7 @@ const btnAgain = document.querySelector('.again');
 
 const labelScore = document.querySelector('.score');
 const highScore = document.querySelector('.highscore');
+let decreaseNumber = 20;
 
 btnCheck.addEventListener('click', () =>{
     console.log('random', random);
@@ -30,10 +31,10 @@ function checkNumber(number) {
 
     if (number < random) {
         message.textContent = 'the number is bigger!';
-        scoreDecr(labelScore);
+        scoreDecrease(labelScore);
     } else if (number > random) {
         message.textContent = 'the number is lower!';
-        scoreDecr(labelScore);
+        scoreDecrease(labelScore);
     } else if (number === random) {
         qustionMarkBlock.textContent = random;
         message.textContent = '🎉 congratulations!';
@@ -42,6 +43,18 @@ function checkNumber(number) {
     }
 };
 
-function scoreDecr(score) {
-  return score.innerHTML -= 1;;
+function scoreDecrease(score) {
+   if (score.innerHTML > 1) {
+    score.innerHTML = --decreaseNumber;
+   } else {
+    score.innerHTML = 'Game Over';
+   }
+
+//    if (score.innerHTML < 10) {
+//     score.innerHTML = `0${--decreaseNumber}`;
+//    }
+
+   if (score.innerHTML <= 3) {
+    score.style.color = 'red';
+   }
 }
