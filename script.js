@@ -26,7 +26,6 @@ btnAgain.addEventListener('click', () =>{
     decreaseNumber = 20;
     inputGuess.value = '';
     labelScore.innerHTML = decreaseNumber;
-    highScore.innerHTML = 0;
     random = Math.trunc(Math.random(2) * 20) + 1;
     message.textContent = 'Start guessing...';
     document.body.style.backgroundColor = '#222';
@@ -46,6 +45,10 @@ function checkNumber(number) {
         message.textContent = '🎉 congratulations!';
         document.body.style.backgroundColor = '#60b347';
         highScore.innerHTML = decreaseNumber;
+        // if(highScore.value < decreaseNumber) {
+        //     highScore = decreaseNumber;
+        //     console.log(highScore);
+        // }
     }
 };
 
