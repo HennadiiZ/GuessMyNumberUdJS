@@ -23,9 +23,10 @@ btnCheck.addEventListener('click', () =>{
 });
 
 btnAgain.addEventListener('click', () =>{
-    labelScore.innerHTML = 20;
-    highScore.innerHTML = 0;
     decreaseNumber = 20;
+    inputGuess.value = '';
+    labelScore.innerHTML = decreaseNumber;
+    highScore.innerHTML = 0;
     random = Math.trunc(Math.random(2) * 20) + 1;
     message.textContent = 'Start guessing...';
     document.body.style.backgroundColor = '#222';
